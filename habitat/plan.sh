@@ -4,6 +4,7 @@ pkg_version="0.1.0"
 pkg_maintainer="Indradhanush Gupta <indra@kinvolk.io>"
 pkg_license=('Python-2.0')
 pkg_source="https://github.com/indradhanush/${pkg_name}/archive/v${pkg_version}.tar.gz"
+pkg_deps=( core/python )
 # pkg_filename="${pkg_name}-${pkg_version}.tar.gz"
 # pkg_shasum="TODO"
 # pkg_deps=(core/glibc)
