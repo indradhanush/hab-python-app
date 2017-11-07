@@ -1,4 +1,4 @@
-pkg_name=habitat-python-app
+pkg_name=hab-python-app
 pkg_origin=indradhanush
 pkg_version="0.1.0"
 pkg_maintainer="Indradhanush Gupta <indra@kinvolk.io>"
