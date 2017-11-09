@@ -1,7 +1,11 @@
 #!/bin/sh
 
+set -x
+
+exec 2>&1
+
 echo ">>> {{pkg.path}} "
 source {{pkg.path}}/venv/bin/activate
 cd {{pkg.path}}/src
-exec python manage.py runserver 5000
+exec python manage.py runserver
 
