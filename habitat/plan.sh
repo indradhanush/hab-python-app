@@ -22,20 +22,32 @@ do_verify() {
 }
 
 do_unpack() {
+    set -x
     mkdir -p "$demo_pkg_dir/src"
     pushd "$demo_pkg_dir/src"
     git clone https://github.com/$pkg_origin/$pkg_name
-    popd
+    set +x
     return 0
 }
 
+do_prepare() {
+    set -x
+    pip install virtualenv
+    virtualenv $pkg_prefix/venv
+    source $pkg_prefix/venv/bin/activate
+    set +x
+}
+
 do_build() {
-    pushd "$demo_pkg_dir/src/$pkg_name"
-    make
-    popd
     return 0
 }
 
 do_install() {
-    return 0
+    set -x
+    pushd "$demo_pkg_dir/src/$pkg_name"
+    make install
+    mkdir -p $pkg_prefix/src
+    cp -r app/ quotes/ manage.py $pkg_prefix/src/
+    popd
+    set +x
 }

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo ">>> {{pkg.path}} "
+source {{pkg.path}}/venv/bin/activate
+cd {{pkg.path}}/src
+exec python manage.py runserver 5000
+
