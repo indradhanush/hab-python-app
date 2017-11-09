@@ -25,7 +25,7 @@ do_unpack() {
     set -x
     mkdir -p "$demo_pkg_dir/src"
     pushd "$demo_pkg_dir/src"
-    git clone https://github.com/$pkg_origin/$pkg_name
+    git clone https://github.com/indradhanush/hab-python-app
     set +x
     return 0
 }
